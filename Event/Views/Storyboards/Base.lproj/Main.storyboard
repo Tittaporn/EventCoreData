@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ibq-Re-jZp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Events-->
+        <scene sceneID="Zhd-oT-P24">
+            <objects>
+                <tableViewController id="7oP-uT-QcB" customClass="EventListTableViewController" customModule="Event" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lyq-ne-78U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.82447886500000001" blue="0.76181169360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.82447886500000001" blue="0.76181169360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="104" id="cPT-0O-v13" customClass="EventTableViewCell" customModule="Event" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="104"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cPT-0O-v13" id="E3u-EP-956">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-N2-jXs">
+                                            <rect key="frame" x="28" y="19" width="358" height="66"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ui-yj-zVB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="282" height="66"/>
+                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ag-m4-kHx">
+                                                    <rect key="frame" x="292" y="0.0" width="66" height="66"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="DxH-FK-j0H"/>
+                                                        <constraint firstAttribute="width" secondItem="3ag-m4-kHx" secondAttribute="height" multiplier="1:1" id="u6t-Xb-8U9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <color key="tintColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="clock.fill" catalog="system">
+                                                        <color key="titleColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="attendingStatusButtonTapped:" destination="cPT-0O-v13" eventType="touchUpInside" id="Kfe-Wd-YNY"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.82447886500000001" blue="0.76181169360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="eHv-N2-jXs" secondAttribute="bottom" constant="8" id="FWx-ZR-F6e"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="eHv-N2-jXs" secondAttribute="trailing" constant="8" id="MqL-eP-c7I"/>
+                                        <constraint firstItem="eHv-N2-jXs" firstAttribute="leading" secondItem="E3u-EP-956" secondAttribute="leadingMargin" constant="8" id="OcS-k3-Eg9"/>
+                                        <constraint firstItem="eHv-N2-jXs" firstAttribute="top" secondItem="E3u-EP-956" secondAttribute="topMargin" constant="8" id="a0z-An-x5n"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.8244788649632222" blue="0.76181169362412959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="eventAttendingButton" destination="3ag-m4-kHx" id="rfJ-yv-Zjj"/>
+                                    <outlet property="eventTitleLabel" destination="1Ui-yj-zVB" id="Odl-Zv-wcF"/>
+                                    <segue destination="w4O-XH-L2d" kind="show" identifier="toEventDetailVC" id="oQS-tP-Pzn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7oP-uT-QcB" id="Vba-hU-Y4b"/>
+                            <outlet property="delegate" destination="7oP-uT-QcB" id="9kP-QU-Ddb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Events" id="RPo-Ig-Ahf">
+                        <barButtonItem key="rightBarButtonItem" image="calendar.badge.plus" catalog="system" id="PQr-Im-J9e">
+                            <connections>
+                                <segue destination="w4O-XH-L2d" kind="show" id="puS-Af-74B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keu-dV-WDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750.72463768115949" y="-18.080357142857142"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="XHC-sp-a2V">
+            <objects>
+                <viewController id="w4O-XH-L2d" customClass="EventDetailViewController" customModule="Event" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JCa-ed-jxe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create New Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiU-KM-7GT">
+                                <rect key="frame" x="16" y="104" width="382" height="39.5"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your event here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHb-Vv-NZD">
+                                <rect key="frame" x="16" y="159.5" width="382" height="34"/>
+                                <color key="backgroundColor" red="0.97645002599999997" green="0.80448681119999998" blue="0.58766716720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="6Um-MC-8iD">
+                                <rect key="frame" x="16" y="209.5" width="382" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="382" id="W1l-zU-Jmu"/>
+                                    <constraint firstAttribute="height" constant="400" id="tUZ-7r-vvu"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="eventDatePickerChanged:" destination="w4O-XH-L2d" eventType="valueChanged" id="Jda-s5-nqt"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Av-Cd-Vhk"/>
+                        <color key="backgroundColor" red="1" green="0.82447886500000001" blue="0.76181169360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Av-Cd-Vhk" firstAttribute="trailing" secondItem="EiU-KM-7GT" secondAttribute="trailing" constant="16" id="JW7-eY-2co"/>
+                            <constraint firstItem="EHb-Vv-NZD" firstAttribute="leading" secondItem="4Av-Cd-Vhk" secondAttribute="leading" constant="16" id="VRS-5h-JPS"/>
+                            <constraint firstItem="4Av-Cd-Vhk" firstAttribute="trailing" secondItem="6Um-MC-8iD" secondAttribute="trailing" constant="16" id="XB6-aU-CUm"/>
+                            <constraint firstItem="EHb-Vv-NZD" firstAttribute="top" secondItem="EiU-KM-7GT" secondAttribute="bottom" constant="16" id="aCD-JE-KMZ"/>
+                            <constraint firstItem="6Um-MC-8iD" firstAttribute="leading" secondItem="4Av-Cd-Vhk" secondAttribute="leading" constant="16" id="bdz-64-SeB"/>
+                            <constraint firstItem="EiU-KM-7GT" firstAttribute="leading" secondItem="4Av-Cd-Vhk" secondAttribute="leading" constant="16" id="kKd-3t-Y3Y"/>
+                            <constraint firstItem="4Av-Cd-Vhk" firstAttribute="trailing" secondItem="EHb-Vv-NZD" secondAttribute="trailing" constant="16" id="m21-Zp-a5Y"/>
+                            <constraint firstItem="6Um-MC-8iD" firstAttribute="top" secondItem="EHb-Vv-NZD" secondAttribute="bottom" constant="16" id="wqM-E2-WYA"/>
+                            <constraint firstItem="EiU-KM-7GT" firstAttribute="top" secondItem="4Av-Cd-Vhk" secondAttribute="top" constant="16" id="wxs-5U-9H9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nCg-tV-OWJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="I4f-XV-65U">
+                            <connections>
+                                <action selector="saveEventButtonTapped:" destination="w4O-XH-L2d" id="mlV-2Z-RiE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="eventDatePicker" destination="6Um-MC-8iD" id="K9u-mr-NXx"/>
+                        <outlet property="eventTitleTextField" destination="EHb-Vv-NZD" id="jTv-pZ-Psn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oCC-wE-sYD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1586.9565217391305" y="-26.116071428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SHc-4P-i9S">
+            <objects>
+                <navigationController id="Ibq-Re-jZp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YHO-q7-BIT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.14609539035709296" blue="0.05921473483588402" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemRedColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="30"/>
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7oP-uT-QcB" kind="relationship" relationship="rootViewController" id="9QS-KR-AGb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RVi-07-2mV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-137" y="-18"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oQS-tP-Pzn"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
