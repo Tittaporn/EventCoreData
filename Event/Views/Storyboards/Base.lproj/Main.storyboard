@@ -3,12 +3,13 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Events-->
+        <!--EVENTS-->
         <scene sceneID="Zhd-oT-P24">
             <objects>
                 <tableViewController id="7oP-uT-QcB" customClass="EventListTableViewController" customModule="Event" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,12 +29,26 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-N2-jXs">
                                             <rect key="frame" x="28" y="19" width="358" height="66"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ui-yj-zVB">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mxw-YW-rSf">
                                                     <rect key="frame" x="0.0" y="0.0" width="282" height="66"/>
-                                                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
-                                                    <color key="textColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ui-yj-zVB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="282" height="29.5"/>
+                                                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
+                                                            <color key="textColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfv-dp-ILb">
+                                                            <rect key="frame" x="0.0" y="39.5" width="282" height="26.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="26.5" id="Whg-Td-7Bn"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="16"/>
+                                                            <color key="textColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ag-m4-kHx">
                                                     <rect key="frame" x="292" y="0.0" width="66" height="66"/>
                                                     <constraints>
@@ -42,8 +57,10 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <color key="tintColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" image="clock.fill" catalog="system">
+                                                    <state key="normal">
                                                         <color key="titleColor" red="1" green="0.1460953904" blue="0.059214734839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <imageReference key="image" image="clock.fill" catalog="system" symbolScale="large"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="medium"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="attendingStatusButtonTapped:" destination="cPT-0O-v13" eventType="touchUpInside" id="Kfe-Wd-YNY"/>
@@ -63,6 +80,7 @@
                                 <color key="backgroundColor" red="1" green="0.8244788649632222" blue="0.76181169362412959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="eventAttendingButton" destination="3ag-m4-kHx" id="rfJ-yv-Zjj"/>
+                                    <outlet property="eventDateLabel" destination="Xfv-dp-ILb" id="fzf-ku-GxB"/>
                                     <outlet property="eventTitleLabel" destination="1Ui-yj-zVB" id="Odl-Zv-wcF"/>
                                     <segue destination="w4O-XH-L2d" kind="show" identifier="toEventDetailVC" id="oQS-tP-Pzn"/>
                                 </connections>
@@ -73,7 +91,7 @@
                             <outlet property="delegate" destination="7oP-uT-QcB" id="9kP-QU-Ddb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="RPo-Ig-Ahf">
+                    <navigationItem key="navigationItem" title="EVENTS" id="RPo-Ig-Ahf">
                         <barButtonItem key="rightBarButtonItem" image="calendar.badge.plus" catalog="system" id="PQr-Im-J9e">
                             <connections>
                                 <segue destination="w4O-XH-L2d" kind="show" id="puS-Af-74B"/>
@@ -100,19 +118,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your event here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHb-Vv-NZD">
-                                <rect key="frame" x="16" y="159.5" width="382" height="34"/>
+                                <rect key="frame" x="16" y="159.5" width="382" height="38.5"/>
                                 <color key="backgroundColor" red="0.97645002599999997" green="0.80448681119999998" blue="0.58766716720000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="6Um-MC-8iD">
-                                <rect key="frame" x="16" y="209.5" width="382" height="400"/>
+                                <rect key="frame" x="16" y="214" width="382" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="382" id="W1l-zU-Jmu"/>
                                     <constraint firstAttribute="height" constant="400" id="tUZ-7r-vvu"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="eventDatePickerChanged:" destination="w4O-XH-L2d" eventType="valueChanged" id="Jda-s5-nqt"/>
+                                    <action selector="evenDateValueChanged:" destination="w4O-XH-L2d" eventType="valueChanged" id="PRI-mB-jwV"/>
                                 </connections>
                             </datePicker>
                         </subviews>
@@ -138,6 +157,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createOrUpdateLabel" destination="EiU-KM-7GT" id="lMG-tn-gEg"/>
                         <outlet property="eventDatePicker" destination="6Um-MC-8iD" id="K9u-mr-NXx"/>
                         <outlet property="eventTitleTextField" destination="EHb-Vv-NZD" id="jTv-pZ-Psn"/>
                     </connections>
@@ -178,6 +198,9 @@
         <image name="clock.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

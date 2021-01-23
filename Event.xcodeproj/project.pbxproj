@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362EECE825BB54D20066FA81 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362EECE725BB54D20066FA81 /* NotificationScheduler.swift */; };
 		3638D15825BB350300A391A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638D15725BB350300A391A9 /* AppDelegate.swift */; };
 		3638D15A25BB350300A391A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638D15925BB350300A391A9 /* SceneDelegate.swift */; };
 		3638D15F25BB350300A391A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3638D15D25BB350300A391A9 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		3638D1AB25BB418B00A391A9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638D1AA25BB418B00A391A9 /* CoreDataStack.swift */; };
 		3638D1B025BB41F400A391A9 /* Event+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638D1AF25BB41F400A391A9 /* Event+Convenience.swift */; };
 		3638D1B525BB430D00A391A9 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638D1B425BB430D00A391A9 /* EventController.swift */; };
+		3645811425BBD6D4004DF522 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645811325BBD6D4004DF522 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		362EECE725BB54D20066FA81 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		3638D15425BB350300A391A9 /* Event.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Event.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3638D15725BB350300A391A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3638D15925BB350300A391A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		3638D1AA25BB418B00A391A9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		3638D1AF25BB41F400A391A9 /* Event+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event+Convenience.swift"; sourceTree = "<group>"; };
 		3638D1B425BB430D00A391A9 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		3645811325BBD6D4004DF522 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		3638D18D25BB352E00A391A9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3645811225BBD6B7004DF522 /* Helpers */,
 				3638D15725BB350300A391A9 /* AppDelegate.swift */,
 				3638D15925BB350300A391A9 /* SceneDelegate.swift */,
 				3638D16325BB350600A391A9 /* Assets.xcassets */,
@@ -189,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				3638D1B425BB430D00A391A9 /* EventController.swift */,
+				362EECE725BB54D20066FA81 /* NotificationScheduler.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -208,6 +214,14 @@
 				3638D19825BB3C4300A391A9 /* EventTableViewCell.swift */,
 			);
 			path = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		3645811225BBD6B7004DF522 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3645811325BBD6D4004DF522 /* Date+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,7 +355,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3638D1AB25BB418B00A391A9 /* CoreDataStack.swift in Sources */,
+				3645811425BBD6D4004DF522 /* Date+Extension.swift in Sources */,
 				3638D1A325BB3C8400A391A9 /* EventDetailViewController.swift in Sources */,
+				362EECE825BB54D20066FA81 /* NotificationScheduler.swift in Sources */,
 				3638D1B525BB430D00A391A9 /* EventController.swift in Sources */,
 				3638D19925BB3C4300A391A9 /* EventTableViewCell.swift in Sources */,
 				3638D19E25BB3C6100A391A9 /* EventListTableViewController.swift in Sources */,

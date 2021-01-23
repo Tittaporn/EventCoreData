@@ -8,7 +8,7 @@
 import CoreData
 
 extension Event {
-    @discardableResult convenience init(title: String, data: Date, attendingStatus: Bool = false, id: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.context){
+    @discardableResult convenience init(title: String, date: Date, attendingStatus: Bool = false, id: String = UUID().uuidString, context: NSManagedObjectContext = CoreDataStack.context){
         self.init(context: context)
         self.title = title
         self.date = date
