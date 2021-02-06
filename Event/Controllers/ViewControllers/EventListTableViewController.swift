@@ -24,13 +24,10 @@ class EventListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        print("sections : \(EventController.shared.sections.count)")
-        
         return EventController.shared.sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("sections : \(EventController.shared.sections[section].count)")
         return EventController.shared.sections[section].count
     }
     
@@ -57,8 +54,14 @@ class EventListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
+            if EventController.shared.attendingEvents.count == 0 {
+                return ""
+            }
             return "ATTENDING EVENTS"
         } else if section == 1 {
+            if EventController.shared.notAttendingEvents.count == 0 {
+                return ""
+            }
             return "NOT ATTENDING EVENTS"
         } else {
             return nil
